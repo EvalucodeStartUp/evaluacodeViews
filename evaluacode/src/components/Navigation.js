@@ -1,36 +1,64 @@
-import React from "react";
-import {Link, NavLink} from "react-router-dom";
-import Button from '@mui/material/Button';
-import logo from "../Assets/logo.PNG";
-import {AppBar, IconButton, Toolbar} from "@mui/material";
-import {CatchingPokemon} from "@mui/icons-material";
+import React, { useState } from "react";
+import {AppBar, Button, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme} from "@mui/material";
+import DrawerComp from "./Drawer";
+import logo from '../Assets/logo.PNG'; // Tell webpack this JS file uses this image
 
-function Navigation() {
+import {Link} from "react-router-dom";
+const Navigation = () => {
+    const [value, setValue] = useState();
+    const theme = useTheme();
+    console.log(theme);
+    const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+    console.log(isMatch);
+
     return (
-       <div className="navigation">
-           <Link to="/pricing">
-               pricing
-           </Link>
-           <Button variant="outlined">Outlined</Button>
-           <Link to="/pricinga">
-               pricing
-           </Link>
-           <AppBar position="static">
-               <Toolbar>
-                   <IconButton size="large" edge="start" color="inherit" aria-label='logo'>
-                       <CatchingPokemon/>
-                       </IconButton>
-               </Toolbar>
+        <React.Fragment>
+            <AppBar position='static' sx={{ background: "#FFFFFF" }}>
+                <Toolbar>
+                    <img src={logo} alt="Logo" height={'50px'}/>
 
-           </AppBar>
+                    {isMatch ? (
+                        <>
+                            <DrawerComp />
+                        </>
+                    ) : (
+                        <>
 
+                            <Tabs
+                                sx={{ color: '#000000' , marginLeft:'auto'}}
 
+                                textColor="inherit"
+                                value={value}
+                                onChange={(e, value) => setValue(value)}
+                                justifyContent="flex-end"
 
-       </div>
+                            >
+                                <Tab label="Home" index={0} component={Link} to={"/"} />
+                                <Tab label="Pricing" index={1} component={Link} to={"/pricing"} />
+                                <Tab label="Resources" index={1} component={Link} to={"/resources"} />
+
+                            </Tabs>
+                            <Button component={Link} to="/dashboard" sx={{ marginLeft: "auto", color: '#FFFFFF', background:'#224C8D' }} variant="contained">
+                                Dashboard
+                            </Button>
+
+                        </>
+                    )}
+                </Toolbar>
+            </AppBar>
+        </React.Fragment>
     );
+};
+{/*         </Link></Button>
+                       <Button color='inherit'><Link to="/dashboard">
+                           dashboard
+                       </Link></Button>
 
-}
-{/*     <span className="sr-only">(actual)</span>
-*/}
+
+
+                       <Typography sx={{ fontSize: "1.5rem", flexGrow:1, paddingLeft: "5%", color: '#000000'}}>
+                        Evalucode
+                    </Typography>
+         */}
 
 export default Navigation;

@@ -6,16 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import MainPage from "./Pages/MainPage";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Navigation from "./components/Navigation";
-import Home from "./Pages/Home";
+import PricingPage from "./Pages/PricingPage";
+import ResourcesPage from "./Pages/ResourcesPage";
+import DashboardPage from "./Pages/DashboardPage";
 
 ReactDOM.render(
     <Router>
         <Navigation/>
         <Routes>
             <Route path ="/" element={<MainPage/> }/>
-            <Route path ="/pricing" element={<MainPage/> }/>
-            <Route path ="/resources" element={<MainPage/> }/>
-            <Route path ="/dashboard" element={<MainPage/> }/>
+            <Route path ="/pricing" element={<PricingPage/> }/>
+            <Route path ="/resources" element={<ResourcesPage/> }/>
+            <Route path ="/dashboard" element={<DashboardPage/> }/>
 
         </Routes>
     </Router>,
