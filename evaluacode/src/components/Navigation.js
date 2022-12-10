@@ -1,51 +1,32 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import Button from '@mui/material/Button';
-import './styleNavigation.scss';
 import logo from "../Assets/logo.PNG";
+import {AppBar, IconButton, Toolbar} from "@mui/material";
+import {CatchingPokemon} from "@mui/icons-material";
 
 function Navigation() {
     return (
-        <div className="navigation">
-            <nav className="navbarnavbar-expand">
-                <div className="container">
-                    <div className="navbar-brand">
-                        <img src={logo} className="imgLogo" alt="logo" />
+       <div className="navigation">
+           <Link to="/pricing">
+               pricing
+           </Link>
+           <Button variant="outlined">Outlined</Button>
+           <Link to="/pricinga">
+               pricing
+           </Link>
+           <AppBar position="static">
+               <Toolbar>
+                   <IconButton size="large" edge="start" color="inherit" aria-label='logo'>
+                       <CatchingPokemon/>
+                       </IconButton>
+               </Toolbar>
+
+           </AppBar>
 
 
-                    </div>
-                    <div>
 
-                        <ul className="navbar-navml-auto">
-                            <div className="line">
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/">
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/pricing">
-                                    Pricing
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/resources">
-                                    Resources
-                                </NavLink>
-                            </li>
-                        </div>
-                            <li className="nav-item">
-                                <NavLink className="navLinkDashboard" to="/dashboard">
-                                    Dashboard
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-
-        </div>
+       </div>
     );
 
 }
