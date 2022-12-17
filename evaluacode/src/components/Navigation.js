@@ -33,9 +33,24 @@ const Navigation = () => {
                                 justifyContent="flex-end"
 
                             >
-                                <Tab label="Home" index={0} component={Link} to={"/"} />
-                                <Tab label="Pricing" index={1} component={Link} to={"/pricing"} />
-                                <Tab label="Resources" index={1} component={Link} to={"/resources"} />
+                                <Tab sx = {{"&:hover": {
+                                        border: "gray",
+                                        color: 'gray',
+                                        borderBottom: "2px solid #000000"
+
+                                    } }} label="Home" index={0} component={Link} to={"/"} />
+                                <Tab sx = {{"&:hover": {
+                                        border: "gray",
+                                        color: 'gray',
+                                        borderBottom: "2px solid #000000"
+
+                                    } }} label="Pricing" index={1} component={Link} to={"/pricing"} />
+                                <Tab sx = {{"&:hover": {
+                                        border: "gray",
+                                        color: 'gray',
+                                        borderBottom: "2px solid #000000"
+
+                                    } }} label="Resources" index={1} component={Link} to={"/resources"} />
 
                             </Tabs>
                             <Button component={Link} to="/dashboard" sx={{ marginLeft: "auto", color: '#FFFFFF', background:'#224C8D' }} variant="contained">

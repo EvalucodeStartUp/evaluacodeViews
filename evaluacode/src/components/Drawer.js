@@ -25,19 +25,31 @@ const DrawerComp = () => {
             >
                 <List>
 
-                        <ListItem component={Link} to="/">
+                        <ListItem sx = {{"&:hover": {
+                                border: "gray",
+                                color: 'gray',
+
+                            } }} component={Link} to="/">
                             <ListItemIcon>
                                 <HomeIcon/>
                             </ListItemIcon>
                                 <ListItemText>Home</ListItemText>
                         </ListItem>
-                    <ListItem component={Link} to="/pricing">
+                    <ListItem sx = {{"&:hover": {
+                            border: "gray",
+                            color: 'gray',
+
+                        } }} component={Link} to="/pricing">
                         <ListItemIcon>
                             <PointOfSaleIcon/>
                         </ListItemIcon>
                         <ListItemText>Pricing</ListItemText>
                     </ListItem>
-                    <ListItem component={Link} to="/resources">
+                    <ListItem sx = {{"&:hover": {
+                            border: "gray",
+                            color: 'gray',
+
+                        } }} component={Link} to="/resources">
                         <ListItemIcon>
                             <SchoolIcon/>
                         </ListItemIcon>

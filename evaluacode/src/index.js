@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import PricingPage from "./Pages/PricingPage";
 import ResourcesPage from "./Pages/ResourcesPage";
 import DashboardPage from "./Pages/DashboardPage";
+import LogIn from "./Pages/LogIn";
 
 ReactDOM.render(
     <Router>
@@ -17,7 +18,7 @@ ReactDOM.render(
             <Route path ="/" element={<MainPage/> }/>
             <Route path ="/pricing" element={<PricingPage/> }/>
             <Route path ="/resources" element={<ResourcesPage/> }/>
-            <Route path ="/dashboard" element={<DashboardPage/> }/>
+            <Route path ="/dashboard" element={<LogIn/> }/>
 
         </Routes>
     </Router>,
