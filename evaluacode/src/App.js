@@ -1,4 +1,6 @@
-/*import logo from './logo.svg';
+import logo from './logo.svg';
+import './App.css';
+import But from './But';
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>hola</p>
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -18,10 +21,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <But/>
     </div>
   );
 }
 
 export default App;
 
- */
+
