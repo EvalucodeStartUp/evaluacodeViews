@@ -39,6 +39,9 @@ function MainPage(){
 
                         </Paper>
                 </Grid>
+                <Grid item xs={5}>
+                        <Paper>Hola</Paper>
+                </Grid>
 
 
             </Grid>
