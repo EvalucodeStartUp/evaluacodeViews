@@ -28,7 +28,7 @@ function LogIn(){
                             <Grid item xs={6} >
                             <img src={logo} alt="Logo" height={'70px'} />
                             </Grid>
-                            <Typography variant="h4" sx={{padding:3}}>Welcome Back! </Typography>
+                            <Typography variant="h4" sx={{padding:3}}>Welcome Back!d</Typography>
 
                             <Grid  xs={6} mb={2}>
                             <TextField id="filled-basic" label="Email" variant="filled" required
