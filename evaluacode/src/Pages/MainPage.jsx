@@ -5,6 +5,7 @@ import * as PropTypes from "prop-types";
 import { styled } from '@mui/material/styles';
 import mainImg from "../Assets/mainImg.jpeg";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Navigation from "../components/Navigation";
 
 
 
@@ -12,7 +13,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText("#224C8D"),
     backgroundColor: "#224C8D",
     '&:hover': {
-        backgroundColor: "#224C00",
+
     },
     marginLeft: "auto",
     padding: 10, margin: 5, width: 150
@@ -20,7 +21,10 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 function MainPage(){
     return(
-        <div className="mainPage">
+
+
+    <div className="mainPage">
+        <Navigation/>
 
             <Grid container spacing={2} p={3}>
                 <Grid item xs={6}>
