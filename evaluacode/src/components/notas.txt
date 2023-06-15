@@ -1,0 +1,2 @@
+                                            <div style={{ marginLeft: 10, marginTop:23, marginBottom:20, marginRight:0, borderLeft: '10px solid blue', height: '25%' }} />
+                                        <div style={{ borderRight: '20px solid blue', height: '100%' }} />
