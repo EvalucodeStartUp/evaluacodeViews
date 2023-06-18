@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import SchoolIcon from '@mui/icons-material/School';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 const pages = ["Home", "pricing", "resources"];
 const DrawerComp = () => {
     const [openDrawer, setOpenDrawer] = useState(false);
@@ -54,6 +55,16 @@ const DrawerComp = () => {
                             <SchoolIcon/>
                         </ListItemIcon>
                         <ListItemText>Resources</ListItemText>
+                    </ListItem>
+                    <ListItem sx = {{"&:hover": {
+                            border: "gray",
+                            color: 'gray',
+
+                        } }} component={Link} to="/dashboard">
+                        <ListItemIcon>
+                            <DashboardIcon/>
+                        </ListItemIcon>
+                        <ListItemText>Dashboard</ListItemText>
                     </ListItem>
 
                 </List>

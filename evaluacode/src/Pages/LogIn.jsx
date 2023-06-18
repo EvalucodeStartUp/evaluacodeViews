@@ -9,6 +9,7 @@ import { purple, lightBlue } from '@mui/material/colors';
 import ButtonBase from '@mui/material/ButtonBase';
 
 import Stack from '@mui/material/Stack';
+import {useNavigate} from "react-router-dom";
 
 
 const Img = styled('img')({
@@ -29,6 +30,11 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function LogIn(){
+    let navigate = useNavigate();
+    const routeChange = () =>{
+        let path = `courses`;
+        navigate(path);
+    }
     let [showPassword, setShowPassword] = useState(false);
     let handleClickShowPassword = () => setShowPassword(!showPassword);
     let handleMouseDownPassword = () => setShowPassword(!showPassword);
@@ -38,98 +44,103 @@ function LogIn(){
     return(
 
         <div className="home">
-            <Box sx={{ flexGrow: 1 }} mt={2}>
-                <Grid container spacing={2} >
-                    <Grid item xs={6} mt={4}>
+            <Box sx={{ display: 'flex', height: `calc(100vh - ${15}px)` }}>
+                <Box sx={{ flex: 10, backgroundColor: 'white' }}>
+                    <Grid
+                        container
+                        spacing={1}
+                        direction="column"
+                        alignItems="center"
+                        justifyContent="center"
+                        style={{ minHeight: '50vh' }}
+                        xs = {12}
+                        mt={10}
+                    >
+                        <Grid item xs={12} mb={3}>
+                            <img src={logo} alt="Logo" height={'70px'} />
+                        </Grid>
+                        <Typography variant="h4" sx={{padding:3, marginBottom:3}}>Welcome Back!</Typography>
+
+                        <Grid  xs={12} mb={3}>
+                            <TextField id="filled-basic" label="Email" variant="filled" required
+                                       fullWidth mb={10} sx={{ width: '120%' }}/>
+                            <Grid mt={4}>
+                                <TextField id="password" label="Password" variant="filled"  type={showPassword ? "text" : "password"}
+                                           required
+                                           fullWidth sx={{ width: '120%' }}
+                                           InputProps={{
+                                               endAdornment: (
+                                                   <InputAdornment position="end">
+                                                       <IconButton
+                                                           aria-label="toggle password visibility"
+                                                           onClick={handleClickShowPassword}
+                                                           onMouseDown={handleMouseDownPassword}
+                                                       >
+                                                           {showPassword ? <Visibility /> : <VisibilityOff />}
+                                                       </IconButton>
+                                                   </InputAdornment>
+                                               )
+                                           }}/>
+                            </Grid>
+                        </Grid>
+                        <Grid item >
+                            <Button variant="contained" fullWidth type="submit" onClick={routeChange}> LOG IN </Button>
+                        </Grid>
+
+
+                    </Grid>
+
+                </Box>
+
+                <Box sx={{ flex: 10, backgroundColor: primary }}>
+                    <Box sx={{  marginRight:0, marginTop:0, marginBottom:'100%'}} >
                         <Grid
                             container
-                            spacing={2}
-                            direction="column"
-                            alignItems="center"
                             justifyContent="center"
-                            style={{ minHeight: '50vh' }}
+                            alignItems="center"
+
+
                         >
-                            <Grid item xs={6} >
-                            <img src={logo} alt="Logo" height={'70px'} />
-                            </Grid>
-                            <Typography variant="h4" sx={{padding:3}}>Welcome Back!</Typography>
+                            <Img src={personaFeliz} alt="Imagen"  />
+                        </Grid>
 
-                            <Grid  xs={6} mb={2}>
-                            <TextField id="filled-basic" label="Email" variant="filled" required
-                                       fullWidth mb={10}/>
-                                <Grid mt={4}>
-                            <TextField id="password" label="Password" variant="filled"  type={showPassword ? "text" : "password"}
-                                       required
-                                       fullWidth
-                                       InputProps={{
-                                           endAdornment: (
-                                               <InputAdornment position="end">
-                                                   <IconButton
-                                                       aria-label="toggle password visibility"
-                                                       onClick={handleClickShowPassword}
-                                                       onMouseDown={handleMouseDownPassword}
-                                                   >
-                                                       {showPassword ? <Visibility /> : <VisibilityOff />}
-                                                   </IconButton>
-                                               </InputAdornment>
-                                           )
-                                       }}/>
-                            </Grid>
-                            </Grid>
-                            <Grid item xs={4}>
-                                <Button variant="contained" fullWidth type="submit"> LOG IN </Button>
-                            </Grid>
+                        <Paper
+                            sx={{
+                                margin: 'auto',
+                                maxWidth: 300,
+                                bgcolor: secondary,
 
 
-                            </Grid>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Box sx={{ bgcolor: primary, marginRight:3, marginTop:2, paddingBottom:10}}>
+                            }}
+                        >
+
                             <Grid
                                 container
-                                justifyContent="center"
+                                direction="row"
+                                justifyContent="space-between"
                                 alignItems="center"
-                                style={{ minHeight: '10vh' }}
-
-                            >
-                                <Img src={personaFeliz} alt="Imagen"  />
-                            </Grid>
-
-                            <Paper
-                                sx={{
-                                    margin: 'auto',
-                                    maxWidth: 300,
-                                    bgcolor: secondary,
-                                }}
                             >
 
-                                <Grid
-                                    container
-                                    direction="row"
-                                    justifyContent="space-between"
-                                    alignItems="center"
-                                >
+                                <Grid container spacing={3}>
+                                    <Grid item xs={2}>
 
-                                    <Grid container spacing={3}>
-                                        <Grid item xs={2}>
+                                        <div style={{ marginLeft: 10, marginTop:40, marginBottom:20, marginRight:0, borderLeft: '10px solid blue', height: '25%' }} />
 
-                                            <div style={{ marginLeft: 10, marginTop:40, marginBottom:20, marginRight:0, borderLeft: '10px solid blue', height: '25%' }} />
+                                    </Grid>
+                                    <Grid item xs={8}>
+                                        <Stack spacing={1} marginTop={1} marginBottom={1}>
+                                            <Typography color="primary" align="left"> Ericka</Typography>
+                                            <Typography>"El mejor nddjd ajdjdjakid d dkaikdidia"</Typography>
 
-                                        </Grid>
-                                        <Grid item xs={8}>
-                                            <Stack spacing={1} marginTop={1} marginBottom={1}>
-                                                <Typography color="primary" align="left"> Ericka</Typography>
-                                                <Typography>"El mejor nddjd ajdjdjakid d dkaikdidia"</Typography>
+                                        </Stack>
+                                    </Grid>
+                                    <Grid item xs>
 
-                                            </Stack>
-                                        </Grid>
-                                        <Grid item xs>
+                                        <div style={{ borderRight: '20px solid blue', height: '100%' }} />
 
-                                            <div style={{ borderRight: '20px solid blue', height: '100%' }} />
-
-                                        </Grid>
                                     </Grid>
                                 </Grid>
+                            </Grid>
 
 
 
@@ -138,17 +149,16 @@ function LogIn(){
 
 
 
-                            </Paper>
+                        </Paper>
 
 
 
-                        </Box>
+                    </Box>
 
 
-                    </Grid>
 
+                </Box>
 
-                </Grid>
             </Box>
         </div>
     );
